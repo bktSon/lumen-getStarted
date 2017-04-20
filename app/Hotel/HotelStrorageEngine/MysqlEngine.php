@@ -31,4 +31,15 @@ class MysqlEngine implements Engine
             'address',
         ]);
   }
+
+  /**
+   * @param $id
+   * @return int|null
+   */
+
+  public function detroy($id)
+  {
+    $hotel = $this->connection->table('hotels')->find($id);
+    return $hotel ? $this->connection->table('hotels')->delete($id) : null;
+  }
 }

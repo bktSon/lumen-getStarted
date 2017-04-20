@@ -12,10 +12,12 @@
 */
 
 $app->get('/', function () use ($app) {
-//    return $app->version();
-  return 'Hello world';
+    return $app->version();
+//  return 'Hello world';
 });
 
 $app->get('/hotel/{id}', 'HotelController@getHotel');
 
-$app->get('hotel', 'HotelController@getList');
+$app->get('/hotel', 'HotelController@getList');
+
+$app->get('/hotel/delete/{id}', 'HotelController@destroy');

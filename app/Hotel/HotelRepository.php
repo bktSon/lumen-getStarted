@@ -26,6 +26,7 @@ class HotelRepository
 
   /**
    * HotelRepository constructor.
+   *
    * @param MysqlEngine $engine
    * @param HotelFactory $factory
    */
@@ -38,13 +39,14 @@ class HotelRepository
 
   /**
    * @param $id
+   *
    * @return Hotel
    */
 
   public function getHotel($id)
   {
-    $rawData = $this->engine->buildQuery()->find($id);
-    return $rawData ? $this->factory->factory($rawData) : null;
+    $rawData = $this->engine->buildQuery ()->find ($id);
+    return $rawData ? $this->factory->factory ($rawData) : null;
   }
 
   /**
@@ -52,8 +54,18 @@ class HotelRepository
    */
   public function getList()
   {
-    $rawData = $this->engine->buildQuery()->get();
-    return $rawData ? $this->factory->factoryList($rawData) : null;
+    $rawData = $this->engine->buildQuery ()->get ();
+    return $rawData ? $this->factory->factoryList ($rawData) : null;
+  }
+
+  /**
+   * @param $id
+   *
+   * @return mixed
+   */
+  public function destroy($id)
+  {
+    return $this->engine->detroy($id);
   }
 }
 
