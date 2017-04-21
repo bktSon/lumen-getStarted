@@ -64,9 +64,9 @@ $app->register(App\Hotel\HotelServiceProvider::class);
 //    App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+ $app->routeMiddleware([
+     'store' => App\Http\Middleware\StoreHotelMiddleware::class,
+ ]);
 
 /*
 |--------------------------------------------------------------------------

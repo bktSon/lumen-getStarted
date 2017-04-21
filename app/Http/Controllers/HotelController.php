@@ -2,8 +2,10 @@
 
 namespace app\Http\Controllers;
 
-use App\Hotel\HotelRepository;
+use App\Hotel\Hotel;
 use App\Http\Controllers\Controller;
+use App\Hotel\HotelRepository;
+use Illuminate\Http\Request;
 
 /**
  * @property HotelRepository hotelRepository
@@ -68,4 +70,17 @@ class HotelController extends Controller
 	  return response()->json($response, $response['code']);
 	}
   }
+
+  /**
+   * @param Hotel $hotel
+   * @return Hotel
+   */
+
+  public function store(Hotel $hotel) {
+     $this->hotelRepository->store($hotel);
+     $response = ['code' => 200, 'status' => 'store success'];
+     return response()->json($response, $response['code']);
+  }
 }
+
+

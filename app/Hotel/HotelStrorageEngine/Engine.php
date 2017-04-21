@@ -7,8 +7,7 @@
  */
 
 namespace app\Hotel\HotelStrorageEngine;
-use Illuminate\Database\Query\Builder;
-use Illuminate\Database\Query\Expression;
+
 
 interface Engine
 {

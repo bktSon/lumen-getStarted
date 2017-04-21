@@ -9,7 +9,8 @@
 namespace app\Hotel;
 
 
-use app\Hotel\HotelStrorageEngine\MysqlEngine;
+use App\Hotel\HotelStrorageEngine\MysqlEngine;
+use App\Hotel\Hotel;
 
 class HotelRepository
 {
@@ -66,6 +67,13 @@ class HotelRepository
   public function destroy($id)
   {
     return $this->engine->detroy($id);
+  }
+
+  /**
+   * @return Hotel
+   */
+  public function store(Hotel $hotel) {
+    return $this->engine->store($hotel);
   }
 }
 
