@@ -19,7 +19,7 @@ $app->get('/hotel/{id}', 'HotelController@getHotel');
 
 $app->get('/hotel', 'HotelController@getList');
 
-$app->get('/hotel/delete/{id}', 'HotelController@destroy');
+$app->delete('/hotel/{id}', 'HotelController@destroy');
 
 $app->post('/hotel', [
 	'middleware' => 'store',
