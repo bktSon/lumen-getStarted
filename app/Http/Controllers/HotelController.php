@@ -82,5 +82,3 @@ class HotelController extends Controller
      return response()->json($response, $response['code']);
   }
 }
-
-
